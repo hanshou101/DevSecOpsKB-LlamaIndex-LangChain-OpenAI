@@ -1,3 +1,86 @@
 Enter your text,output,flag,username,timestamp
 "I got “Pull access denied” for ECR, how to fix it?","'
 If you get a ""Pull access denied"" error for ECR, it indicates that the task execution role for your app needs to be granted permission to pull image from your ECR repo. Your ECR repo’s permission (policy json) needs to be revised to add your task execution role’s ARN. Reach out to your DevOps resource to add this entry in your ECR repo’s policy json.",,,2023-05-17 23:37:27.587838
+,"The most important information in this knowledge base is about Trivy, a tool that can find vulnerabilities, misconfigurations, and sensitive information in OS packages, software dependencies, and IaC. It is important to fix any vulnerabilities found by Trivy in the Dockerfile. Additionally, the knowledge base includes information about the top CI/CD tools to look out for in 2021, best practices for operating containers, and the benefits of using immutable Docker images.",,,2023-06-08 16:40:33.976326
+请为我简单介绍，知识库的内容,The context information does not provide any information about the content of a knowledge base.,,,2023-06-08 16:55:06.561014
+请教我，SQL的一些利用技巧？,"可以参考以下资源：
+- sql 注入 sheet 表 https://sqlwiki.netspi.com/
+- 一个专注于聚合和记录各种 SQL 注入方法的 wiki https://github.com/kevins1022/SQLInjectionWiki
+- 针对各种情况自由变化的 MySQL 注入脚本 https://github.com/youngyangyang04/NoSQLAttack
+- SQL 盲注利用框架 https://github.com/Neohapsis/bbqsql
+- 基于 Powershell 的 sqlserver 测试框架 https://github.com/NetSPI/PowerUpSQL
+- 利用 PowerUpSQL，渗透测试技巧：绕过 SQL Server 登录触发器限制 http://www.4hou.com/system/14950.html
+- 一款数据库扫描器 https://github.com/WhitewidowScanner/whitewidow
+- MongoDB 审计及渗透工具 https://github.com/stampery/mongoaudit
+- NoSQL 扫描/爆破工具 https://github.com/torque59/Nosql-Exploitation-Framework
+- MySQL 盲注爆破工具 https://github.com/missDronio/blindy
+- 用于 http header 中的时间盲注爆破工具，仅针对 MySQL/MariaDB https://github.com/JohnTroony/Blisqy",,,2023-06-08 17:07:15.619006
+"请为我总结，在【知识库】中，所有和【sql注入】相关的信息。
+
+要求：
+① 尽可能详细
+② 用中文进行表达
+③ 如果有链接，请附带相关的链接进行显示。
+④ 对于找到的每个知识点，除了列出重点标题信息之外，请展开详细做逐一介绍。",The original answer remains the same as the new context provided is not related to SQL injection.,,,2023-06-08 21:32:41.560563
+"请为我总结，在【知识库】中，所有和【sql注入攻击】相关的信息。
+
+要求：
+① 尽可能详细
+② 用中文进行表达
+③ 如果有链接，请附带相关的链接进行显示。
+④ 对于找到的每个知识点，除了列出重点标题信息之外，请展开详细做逐一介绍。","关于SQL注入攻击的相关信息在这个【知识库】中包括以下内容：
+
+1. SQL注入攻击知识点
+网站链接：https://sqlwiki.netspi.com/
+这个网站是一个关于SQL注入攻击的知识库，提供了丰富的资料，包括SQL注入分类、注入工具、注入示例等。
+
+2. SQL注入方法聚合记录
+网站链接：https://github.com/kevins1022/SQLInjectionWiki
+这个网站记录了各种SQL注入方法，包括常见的注入技巧、防御措施、实战案例等。
+
+3. Linux漏洞利用
+网站链接：https://github.com/hardenedlinux/linux-exploit-development-tutorial
+这个网站关注于Linux漏洞的开发和利用方法，其中也包括了一些关于SQL注入的内容。
+
+4. Android安全
+网站链接：https://wizardforcel.gitbooks.io/asani/content
+这本书是一本浅入浅出的关于Android安全的中文版教材，其中也讨论了SQL注入攻击。
+
+5. Android渗透测试学习手册
+网站链接：https://wizardforcel.gitbooks.io/lpad/content
+这本书是一本带有实践性的Android渗透测试学习手册，其中也包括了SQL注入攻击的部分内容。
+
+6. iOS漏洞利用笔记
+网站链接：https://github.com/writeups/ios
+这个网站提供了一些关于iOS漏洞利用的笔记，其中也包括了SQL注入攻击的实际案例。
+
+7. SSRF漏洞利用手册
+网站链接：http://blog.safebuff.com/2016/07/03/SSRF-Tips/
+这个网站是一个关于SSRF漏洞利用的手册，其中也包括了一些关于SQL注入的实践案例。
+
+8. 网络安全科普小册子
+网站链接：https://book.yunzhan365.com/umta/rtnp/mobile/index.html
+这本小册子提供了丰富的网络安全知识点，其中也包括了SQL注入攻击的相关内容。
+
+9. 网络安全电子版教材
+网站链接：http://sec.cuc.edu.cn/huangwei/textbook/ns/
+这个网站提供了一本网络安全电子版教材，其中有关于SQL注入攻击的相关内容。
+
+10. mitre机构att&ck入侵检测条目
+网站链接：https://mitre.github.io/attack-navigator/enterprise/
+这个网站展示了mitre机构开发的att&ck矩阵，其中也包括了与SQL注入攻击相关的入侵检测条目。
+
+11. SecLists
+网站链接：https://github.com/danielmiessler/SecLists
+这个网站提供了各种类型的测试数据，包括用户名、密码、URL、敏感数据模式、模糊测试负载、Web shell等，其中也包括了一些与SQL注入攻击相关的内容。
+
+12. APISecurityBestPractices
+网站链接：https://github.com/GitGuardian/APISecurityBestPractices
+这个网站提供了一个API接口测试清单，其中也包括了一些与SQL注入攻击相关的内容。
+
+13. 安全管理体系、ISO27001、等级保护、安全评审过程相关的分享
+网站链接：https://github.com/ym2011/SecurityManagement
+这个网站分享了在建设安全管理体系、ISO27001、等级保护、安全评审过程中的点点滴滴，其中也包括了一些与SQL注入攻击有关的内容。
+
+14. 区块链及以太坊智能合约审计CheckList
+网站链接：https://",,,2023-06-08 23:35:19.461182
