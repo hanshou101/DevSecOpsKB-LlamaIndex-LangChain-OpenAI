@@ -14,7 +14,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 from DevSecOpsKB.my_helper import get_time
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 # os.environ["all_proxy"] = "http://127.0.0.1:59998"
 print(
     os.getenv('OPENAI_API_KEY')
@@ -373,7 +373,144 @@ It is important to note that debugging heap-related issues can be complex and ti
         chunk_size_limit=----------------------1_000,
     )
 
-    return g
+    """
+    耗时，20+秒
+
+    缺陷，耗费较多的【接口重试机会】。
+
+    """
+    h = _cfg(
+        max_input_size=4096,
+        num_outputs=512 * 1 - 0 * 100,
+        chunk_overlap_ratio=0.3,
+        #
+        #
+        #
+        #
+        #
+        #
+        max_chunk_overlap=---------------------1_00,
+        chunk_size_limit=----------------------1_000,
+    )
+
+    """
+    耗时，50+秒
+            效果，似乎还可以的？
+    耗时，28+秒
+            效果，似乎还可以的？
+            
+    而且，一直没有，找不到的情况。
+    
+    """
+    j = _cfg(
+        max_input_size=4096,
+        num_outputs=512 * 2 - 0 * 100,
+        chunk_overlap_ratio=0.3,
+        #
+        #
+        #
+        #
+        #
+        #
+        max_chunk_overlap=---------------------1_00,
+        chunk_size_limit=----------------------1_000,
+    )
+
+    """
+    
+    26+秒
+            没找到结果。
+    
+    32+秒
+            没找到结果。
+
+    35+秒
+            没找到结果。
+
+    39+秒
+            没找到结果。
+    
+    """
+    k = _cfg(
+        max_input_size=4096,
+        num_outputs=512 * 4 - 0 * 100,
+        chunk_overlap_ratio=0.25,
+        #
+        #
+        #
+        #
+        #
+        #
+        max_chunk_overlap=---------------------1_00,
+        chunk_size_limit=----------------------1_000,
+    )
+
+    """
+    194秒
+            没出来结果。
+    36秒
+            没出来结果
+            
+    再试
+            直接报【Got a larger chunk overlap 】了
+    """
+    m = _cfg(
+        max_input_size=4096,
+        num_outputs=512 * 4 - 0 * 100,
+        chunk_overlap_ratio=0.3,
+        #
+        #
+        #
+        #
+        #
+        #
+        max_chunk_overlap=---------------------1_00,
+        chunk_size_limit=----------------------1_000,
+    )
+
+    """
+    
+    30秒
+            还可以。
+    
+    30秒
+            还可以。
+    
+    31秒
+            还可以。
+    
+    34秒
+            一般般。
+    
+    """
+    n = _cfg(
+        max_input_size=4096,
+        num_outputs=512 * 1 - 0 * 100,
+        chunk_overlap_ratio=0.3,
+        #
+        #
+        #
+        #
+        #
+        #
+        max_chunk_overlap=---------------------1_00,
+        chunk_size_limit=----------------------1_000,
+    )
+
+    """
+    TIP：
+        总结，【c】还行，较快。
+                但是，不太稳定。
+    
+        【j】，挺好的。
+                512*2的
+        
+        【n】，也还可以
+                512的
+        
+    """
+
+    return j
     # _cfg(
     #     max_input_size=max_input_size,
     #     num_outputs=num_outputs,
@@ -447,6 +584,7 @@ def data_ingestion_indexing(directory_path):
     index.storage_context.persist()
 
     return index
+
 
 @get_time
 def data_querying(input_text):

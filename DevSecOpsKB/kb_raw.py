@@ -13,7 +13,7 @@ import time
 
 from DevSecOpsKB.my_helper import get_time
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 openai.api_key = os.getenv('OPENAI_API_KEY')
 openai.proxy = "http://127.0.0.1:59998"
 
